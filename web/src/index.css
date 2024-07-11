@@ -1,0 +1,51 @@
+body {
+  background: linear-gradient(108.7deg, rgb(34, 219, 231) -0.9%, rgb(52, 118, 246) 88.7%) !important;
+  height: 100vh;
+   scrollbar-width: thin; /* Define a largura da barra de rolagem no Firefox */
+    scrollbar-color: #007bff #f1f1f1; /* Define a cor do polegar e do trilho no Firefox */
+
+}
+
+/* Personaliza a barra de rolagem */
+::-webkit-scrollbar {
+  width: 12px; /* Largura da barra de rolagem vertical */
+  height: 12px; /* Altura da barra de rolagem horizontal */
+}
+
+/* Personaliza o trilho da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cor do trilho */
+  border-radius: 10px;
+}
+
+/* Personaliza o polegar da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: #007bff; /* Cor do polegar */
+  border-radius: 10px;
+}
+
+/* Personaliza o polegar da barra de rolagem ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #0056b3; /* Cor do polegar ao passar o mouse */
+}
+
+#botaoPaginaInicial {
+  background: blue;
+    height: 60px;
+    width: 60px;
+    color: white;
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: 0.5s ease all;
+    cursor: pointer;
+}
+
+#botaoPaginaInicial:hover {
+  opacity: 1;
+}

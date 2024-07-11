@@ -1,0 +1,14 @@
+.foto-perfil-upload {
+  height: 150px;
+  margin-top: 20px;
+  transition: 0.3s ease all;
+}
+
+.foto-perfil-upload:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#file {
+  display: none;
+}

@@ -1,0 +1,21 @@
+.containerDeListagem {
+  background-color: white;
+  color: black;
+}
+
+.containerDeListagem > * {
+  padding: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease all !important;
+}
+
+.containerDeListagem > *:hover {
+  opacity: 0.2;
+}
+
+
+.containerDeListagem > :nth-child(odd) {
+  background-color: rgb(233, 233, 233);
+
+}

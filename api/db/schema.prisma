@@ -1,0 +1,60 @@
+// Don't forget to tell Prisma about your edits to this file using
+// `yarn rw prisma migrate dev` or `yarn rw prisma db push`.
+// `migrate` is like committing while `push` is for prototyping.
+// Read more about both here:
+// https://www.prisma.io/docs/orm/prisma-migrate
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = "native"
+}
+
+model User {
+  id              Int       @id @default(autoincrement())
+  email           String    @unique
+  name            String?
+  cpf             String?
+  foto            Bytes?
+  cabecalhoBase64 String?
+  rg              String?
+  passwd          String?
+  ultimoAcesso    DateTime?
+  Compra          Compra[]
+  Filial          Filial[]
+}
+
+model Produto {
+  id           Int       @id @default(autoincrement())
+  nome         String
+  valor        Float
+  codigo       String?
+  dataRegistro DateTime?
+  Compra       Compra[]
+}
+
+model Compra {
+  id              Int      @id @default(autoincrement())
+  codigo          String
+  produtoId       Int
+  userId          Int
+  dataCompra      DateTime
+  recibo          Bytes?
+  cabecalhoBase64 String?
+  User            User     @relation(fields: [userId], references: [id])
+  Produto         Produto  @relation(fields: [produtoId], references: [id])
+}
+
+model Filial {
+  id            Int    @id @default(autoincrement())
+  matricula     String
+  nome          String
+  coordenadorId Int
+  geoX          String
+  geoY          String
+  User          User   @relation(fields: [coordenadorId], references: [id])
+}
