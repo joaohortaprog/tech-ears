@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 const customTechEarsNodeRedAxios = axios.create({
-  baseURL: 'http://localhost:1880',
+  baseURL: 'http://localhost:1986',
 });
 
 // Adicione um interceptor de requisição
